@@ -1,0 +1,30 @@
+{
+  "name": "ohcodes",
+  "version": "0.20.0",
+  "private": true,
+  "description": "A producer-facing live-coding music environment with a shared code and step-editor workflow.",
+  "type": "module",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test lib/ohcodes-language.test.mjs",
+    "test:ohcodes": "npm test",
+    "typecheck": "tsc --noEmit",
+    "check": "npm test && npm run build && node scripts/source-manifest.mjs --check",
+    "manifest": "node scripts/source-manifest.mjs"
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "typescript": "5.9.3",
+    "vite": "8.0.13"
+  }
+}
